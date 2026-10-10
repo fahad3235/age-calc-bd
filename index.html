@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Calculator BD — বয়স ক্যালকুলেটর</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap head-row">
+    <div>
+      <h1 id="title">Age Calculator BD</h1>
+      <p id="subtitle" class="sub">Exact age in years, months and days — fully offline.</p>
+    </div>
+    <button id="langBtn" class="lang-btn" type="button">বাংলা</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="card form-card">
+    <div class="fields">
+      <div class="field">
+        <label id="lblBirth" for="birth">Date of birth</label>
+        <input id="birth" type="date" min="1900-01-01" max="9999-12-31">
+      </div>
+      <div class="field">
+        <label id="lblAsof" for="asof">Calculate age as of (optional)</label>
+        <input id="asof" type="date" min="1900-01-01" max="9999-12-31">
+        <small id="asofHint" class="hint">Leave empty to use today.</small>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="calcBtn" class="btn primary" type="button">Calculate age</button>
+      <button id="clearBtn" class="btn" type="button">Clear</button>
+    </div>
+    <p id="error" class="error" role="alert" style="display:none"></p>
+  </section>
+
+  <section id="empty" class="card empty-card">
+    <div class="empty-ico">🎂</div>
+    <h2 id="emptyTitle">Enter your birth date</h2>
+    <p id="emptyText">Your exact age, totals, birth weekday and next birthday will appear here.</p>
+  </section>
+
+  <section id="result" class="card" style="display:none">
+    <p id="ageOnLine" class="age-on"></p>
+    <p id="ageBig" class="age-big"></p>
+    <div class="grid">
+      <div class="stat"><span class="v" id="statDays">–</span><span class="k" id="lblDays">Total days lived</span></div>
+      <div class="stat"><span class="v" id="statMonths">–</span><span class="k" id="lblMonths">Total months</span></div>
+      <div class="stat"><span class="v" id="statWeeks">–</span><span class="k" id="lblWeeks">Total weeks</span></div>
+      <div class="stat"><span class="v" id="statBorn">–</span><span class="k" id="lblBorn">Born on a</span></div>
+      <div class="stat wide"><span class="v" id="statNext">–</span><span class="k" id="lblNext">Next birthday</span><span class="sub2" id="statNextSub"></span></div>
+    </div>
+    <p class="note" id="leapNote"></p>
+  </section>
+
+  <footer>
+    <p id="madeLine">100% offline — your dates never leave this device.</p>
+  </footer>
+</main>
+
+<script src="js/age.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
